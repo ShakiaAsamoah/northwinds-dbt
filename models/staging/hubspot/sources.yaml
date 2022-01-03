@@ -1,0 +1,12 @@
+#sources.yaml
+version: 2
+sources:
+  - name: hubspot
+    database: northwinds_rds
+    schema: hubspot
+
+    tables:
+      - name: contact
+
+
+
