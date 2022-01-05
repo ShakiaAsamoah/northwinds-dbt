@@ -12,7 +12,27 @@ sources:
     loaded_at_field: _fivetran_synced
 
     tables:
-      - name: dimcustomer
+      - name: customers
+        freshness: 
+        warn_after: {count: 24, period: hour}
+        error_after: {count: 36, period: hour}
+        filter: datedif('day', _fivetran_synced, current_timestamp) < 2
+      - name: orders
+        freshness: 
+        warn_after: {count: 24, period: hour}
+        error_after: {count: 36, period: hour}
+        filter: datedif('day', _fivetran_synced, current_timestamp) < 2
+      - name: order_details 
+        freshness: 
+        warn_after: {count: 24, period: hour}
+        error_after: {count: 36, period: hour}
+        filter: datedif('day', _fivetran_synced, current_timestamp) < 2
+      - name: employees
+        freshness: 
+        warn_after: {count: 24, period: hour}
+        error_after: {count: 36, period: hour}
+        filter: datedif('day', _fivetran_synced, current_timestamp) < 2 
+      - products
         freshness: 
         warn_after: {count: 24, period: hour}
         error_after: {count: 36, period: hour}
