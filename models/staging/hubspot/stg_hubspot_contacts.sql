@@ -16,7 +16,7 @@ renamed as (
        SUBSTRING(updated_phone, 7, 4) 
        END as phone,
     business_id
-    FROM contact JOIN companies ON companies.business_name = contact.business_name
+    FROM contact JOIN companies ON companies.name = contact.business_name
 ), 
 final as (
   SELECT 
@@ -24,7 +24,7 @@ final as (
   first_name,
   last_name,
   phone,
-  business_id company_id
+  business_id
   FROM renamed
 )
 SELECT * FROM final 

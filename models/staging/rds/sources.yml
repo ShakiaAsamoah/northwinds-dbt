@@ -11,11 +11,16 @@ sources:
         filter: datedif('day', _fivetran_synced, current_timestamp) < 2
     loaded_at_field: _fivetran_synced
 
-    tables:
-      - name: dimcustomer
-        freshness: 
-        warn_after: {count: 24, period: hour}
-        error_after: {count: 36, period: hour}
-        filter: datedif('day', _fivetran_synced, current_timestamp) < 2
 
+    tables:
+      - name: products
+      - name: orders
+      - name: order_details
+      - name: customers
+      - name: employees
+      - name: categories
+      - name: suppliers
+      - name: territories
+      - name: employee_territories
+      - name: regions
 
